@@ -1,10 +1,17 @@
 const categoriesRef = document.querySelector('#categories');
+const categoriesTitlesRef = document.querySelectorAll('#categories h2');
 // console.log(categories.children);
-const catArr = [...categoriesRef.children];
-console.log(`У списку ${catArr.length} категорії.`);
+// console.log(categoriesTitlesRef);
+const categoriesArr = [...categoriesRef.children];
+console.log(`В списке ${categoriesArr.length} категории.`);
 
-console.log(catArr);
+categoriesTitlesRef.forEach(categoriesTitle =>
+    console.log(`Категория: ${categoriesTitle.textContent}
+    Количество элементов: ${categoriesTitle.parentNode.querySelectorAll('.item li').length}`));
+    
 
-const titleFinder = catArr.forEach(title => {
-    console.log(title.children);
-});
+
+
+
+
+
