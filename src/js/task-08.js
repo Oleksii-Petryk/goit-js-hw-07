@@ -12,14 +12,14 @@ function getAmount() {
 
 function createBoxes(amount) {
   const boxSize = 30;
-  const fragment = document.createDocumentFragment();
+  const arr = []
     for (let i = 0; i < amount; i += 1) {
     let size = boxSize + i * 10;
     let div = document.createElement("div");
     div.style.cssText = `width: ${size}px; height: ${size}px; margin-bottom: 10px; background-color: ${randomColor()}`;
-    fragment.appendChild(div);
+    arr.push(div);
   }
-  boxes.appendChild(fragment);
+  boxes.append(...arr);
 };
 
 function destroyBoxes() {
